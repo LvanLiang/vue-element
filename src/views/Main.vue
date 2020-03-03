@@ -38,7 +38,7 @@
                 <el-dropdown-item>退出登录</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
-            <span>梁效平</span>
+            <span>{{$route.params.username}}</span>
           </el-header>
 
           <el-main>

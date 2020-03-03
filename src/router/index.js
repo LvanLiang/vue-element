@@ -18,13 +18,18 @@ export default new VueRouter({
       component: Login
     },
     {
-      path: "/main",
+      path: "/main/:username",
       name: "Main",
       component: Main,
       children: [
         {path: "/user/profile/:id", component: UserProfile, name: "UserProfile"},
         {path: "/user/list/:id", component: UserList, name: "UserList", props: true}
       ]
+    },
+    {
+      //带参数的组件重定向
+      path: "/goHome/:username",
+      redirect: "/main/:username"
     }
   ]
 });
