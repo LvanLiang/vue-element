@@ -8,9 +8,12 @@ import Login from "../views/Login"
 import UserProfile from "../views/user/Profile";
 import UserList from "../views/user/List";
 
+import NotFound from "../views/error/NotFound";
+
 Vue.use(VueRouter);
 
 export default new VueRouter({
+  model: 'history',
   routes: [
     {
       path: "/login",
@@ -30,6 +33,10 @@ export default new VueRouter({
       //带参数的组件重定向
       path: "/goHome/:username",
       redirect: "/main/:username"
+    },
+    {
+      path: "*",
+      component: NotFound
     }
   ]
 });
