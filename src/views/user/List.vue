@@ -1,12 +1,13 @@
 <template>
     <div>
-      用户列表
+      用户列表: {{id}}
     </div>
 </template>
 
 <script>
     export default {
-        name: "UserList"
+        name: "UserList",
+        props: ["id"]
     }
 </script>
 

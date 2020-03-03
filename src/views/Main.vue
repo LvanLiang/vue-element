@@ -15,7 +15,7 @@
                   <router-link :to="{name: 'UserProfile', params: {id: 2}}">个人信息two</router-link>
                 </el-menu-item>
                 <el-menu-item index="1-3">
-                  <router-link to="/user/list">用户列表</router-link>
+                  <router-link to="/user/list/3">用户列表</router-link>
                 </el-menu-item>
               </el-menu-item-group>
             </el-submenu>
