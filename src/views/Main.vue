@@ -11,6 +11,10 @@
                   <router-link to="/user/profile/1">个人信息</router-link>
                 </el-menu-item>
                 <el-menu-item index="1-2">
+                  <!--第二种路径传参方式，这里的name属性一定要跟路由中的name属性相同-->
+                  <router-link :to="{name: 'UserProfile', params: {id: 2}}">个人信息two</router-link>
+                </el-menu-item>
+                <el-menu-item index="1-3">
                   <router-link to="/user/list">用户列表</router-link>
                 </el-menu-item>
               </el-menu-item-group>
