@@ -22,7 +22,7 @@ export default new VueRouter({
       name: "Main",
       component: Main,
       children: [
-        {path: "/user/profile", component: UserProfile},
+        {path: "/user/profile/:id", component: UserProfile},
         {path: "/user/list", component: UserList}
       ]
     }

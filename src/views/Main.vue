@@ -7,7 +7,8 @@
               <template slot="title"><i class="el-icon-message"></i>用户管理</template>
               <el-menu-item-group>
                 <el-menu-item index="1-1">
-                  <router-link to="/user/profile">个人信息</router-link>
+                  <!--第一种路径传参方式-->
+                  <router-link to="/user/profile/1">个人信息</router-link>
                 </el-menu-item>
                 <el-menu-item index="1-2">
                   <router-link to="/user/list">用户列表</router-link>

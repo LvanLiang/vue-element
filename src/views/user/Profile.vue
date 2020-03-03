@@ -1,6 +1,6 @@
 <template>
   <div>
-    个人信息
+    个人Id信息: {{$route.params.id}}
   </div>
 </template>
 
