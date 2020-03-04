@@ -24,6 +24,9 @@ Vue.use(VueRouter);
 // 安装 ElementUI
 Vue.use(ElementUI);
 
+// 安装vuex
+Vue.use(vuex);
+
 
 // 利用钩子函数 beforeEach来判断用户是否登录，在跳转前执行
 router.beforeEach((to, from, next) => {
