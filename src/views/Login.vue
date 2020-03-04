@@ -56,6 +56,9 @@
               // 设置用户登录成功
               sessionStorage.setItem("isLogin","true");
 
+              //将user存起来
+              this.$store.dispatch('asyncUpdateUser', this.form);
+
             } else {
               this.$message.error("请输入用户名和密码");
             }

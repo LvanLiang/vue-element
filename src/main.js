@@ -12,6 +12,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios';
 Vue.prototype.axios = axios;
 
+// 导入vuex
+import vuex from "vuex";
+import store from "./store";
+
 import App from './App';
 
 // 安装路由
@@ -33,14 +37,16 @@ router.beforeEach((to, from, next) => {
     // 跳转到登录
     next({path: '/login'});
   }
-  // 如果请求的是登录页，跳转到首页
+  // 如果请求的是登录页
   else if (to.path == "/login"){
     if (isLogin != null){
+      // 跳转到首页
       next({path: "/main/administrator"});
     }
   }
-  // 如果为非登录状态，跳转到登录页
+  // 如果为非登录状态
   else if (isLogin == null){
+    // 跳转到登录页
     next({path: '/login'});
   }
 
@@ -58,6 +64,8 @@ new Vue({
   template: '<App/>',
   // 启用自定义路由
   router,
+  // 启动自定义store
+  store,
   // 启用 ElementUI
   render: h => h(App)
 });
