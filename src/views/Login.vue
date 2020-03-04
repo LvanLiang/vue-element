@@ -49,8 +49,12 @@
               // this.$router.push("/main");
 
 
-              //编程式导航传参
+              // 编程式导航传参
               this.$router.push({name: 'Main',params: {username: this.form.username}});
+
+
+              // 设置用户登录成功
+              sessionStorage.setItem("isLogin","true");
 
             } else {
               this.$message.error("请输入用户名和密码");

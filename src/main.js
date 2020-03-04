@@ -12,8 +12,6 @@ import 'element-ui/lib/theme-chalk/index.css';
 import axios from 'axios';
 Vue.prototype.axios = axios;
 
-// 导入vuex
-
 import App from './App';
 
 // 安装路由
@@ -21,6 +19,35 @@ Vue.use(VueRouter);
 
 // 安装 ElementUI
 Vue.use(ElementUI);
+
+
+// 利用钩子函数 beforeEach来判断用户是否登录，在跳转前执行
+router.beforeEach((to, from, next) => {
+  console.log("路由拦截，判断用户是否登录");
+  // 获取登录状态
+  let isLogin = sessionStorage.getItem("isLogin");
+  // 注销
+  if (to.path == "/logout"){
+    // 清空
+    sessionStorage.clear();
+    // 跳转到登录
+    next({path: '/login'});
+  }
+  // 如果请求的是登录页，跳转到首页
+  else if (to.path == "/login"){
+    if (isLogin != null){
+      next({path: "/main/administrator"});
+    }
+  }
+  // 如果为非登录状态，跳转到登录页
+  else if (isLogin == null){
+    next({path: '/login'});
+  }
+
+  //下一个路由
+  next();
+
+});
 
 
 new Vue({
